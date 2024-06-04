@@ -1,0 +1,259 @@
+<main>
+  <div class="container">
+    <div class="image-container">
+      <img class="image-before slider-image" src="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/223/960/067_Torus_1-02_MDF_18mm__75997.1574173961.jpg?c=2" alt="Before Skirting Board" />
+      <div class="dropdown before-dropdown">
+        <label>
+          <select class="before-select">
+            <option value="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/223/960/067_Torus_1-02_MDF_18mm__75997.1574173961.jpg?c=2" selected>Torus Type 1</option>
+          </select>
+        </label>
+      </div>
+      <img class="image-after slider-image" src="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/1126/6932/skirting-world-ogee-1-mdf-skirting-board__34368.1697687726.jpg?c=2" alt="After Skirting Board" />
+      <div class="dropdown after-dropdown">
+        <label>
+          <select class="after-select">
+            <option value="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/1126/6932/skirting-world-ogee-1-mdf-skirting-board__34368.1697687726.jpg?c=2" selected>Ogee</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    </div>
+    <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider" />
+    <div class="slider-line" aria-hidden="true"></div>
+    <div class="slider-button" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+        <rect width="256" height="256" fill="none"></rect>
+        <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+        <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+        <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+        <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+        <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+    }
+
+    .container {
+      display: grid;
+      place-content: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0rem;
+      --position: 50%;
+    }
+
+    .image-container {
+      max-width: 550px;
+      max-height: 550px;
+      aspect-ratio: 1/1;
+      position: relative;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+
+    .image-before {
+      position: absolute;
+      inset: 0;
+      width: var(--position);
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider:focus-visible ~ .slider-button {
+      outline: 5px solid black;
+      outline-offset: 3px;
+    }
+
+    .slider-line {
+      position: absolute;
+      inset: 0;
+      width: 0.2rem;
+      height: 100%;
+      background-color: #fff;
+      left: var(--position);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .slider-button {
+      position: absolute;
+      background-color: #fff;
+      color: black;
+      padding: 0.5rem;
+      border-radius: 100vw;
+      display: grid;
+      place-items: center;
+      top: 50%;
+      left: var(--position);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      box-shadow: 1px 1px 1px hsl(0, 50%, 2%, 0.5);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 20px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .dropdown label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dropdown select {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      margin-left: 10px;
+    }
+
+    .dropdown select option {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+
+    .before-dropdown {
+      left: 20px;
+    }
+
+    .after-dropdown {
+      right: 20px;
+    }
+
+    .before-dropdown.show {
+      opacity: 1;
+    }
+
+    .after-dropdown.show {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+     const options = [
+  { name: 'Ogee', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/1126/6932/skirting-world-ogee-1-mdf-skirting-board__34368.1697687726.jpg?c=2' },
+  { name: 'Torus Type 1', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/223/960/067_Torus_1-02_MDF_18mm__75997.1574173961.jpg?c=2' },
+  { name: 'Torus Type 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/224/277/068_Torus_2-02_MDF_18mm__10461.1519648738.jpg?c=2' },
+  { name: 'Bullnose', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/168/2871/Bullnose_MDF_Skirting_Board_-_145mm_x_18mm_HDF__77019.1583418455.jpg?c=2' },
+  { name: '330', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/161/2728/330_MDF_Skirting_Board_-_145mm_x_18mm_HDF__41626.1582630038.jpg?c=2' },
+  { name: '324', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/159/2697/324_MDF_Skirting_Board_-_145mm_x_18mm_HDF__59692.1582628464.jpg?c=2' },
+  { name: 'Square', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/216/3893/Square_MDF_Skirting_Board_-_145mm_x_18mm_HDF__30094.1585239784.jpg?c=2' },
+  { name: '15mm Grooved', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/158/6860/skirting-world-15mm-grooved-mdf-skirting-board__37928.1687865542.jpg?c=2' },
+  { name: 'Chamfer', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/169/2888/Chamfer_MDF_Skirting_Board_-_145mm_x_18mm_HDF__33528.1583418945.jpg?c=2' },
+  { name: 'Chamfer Round', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/170/2919/Chamfer_Round_MDF_Skirting_Board_-_145mm_x_18mm_HDF__44345.1583419731.jpg?c=2' },
+  { name: 'Edge 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/176/3036/Edge_2_MDF_Skirting_Board_-_145mm_x_18mm_HDF__74356.1583747983.jpg?c=2' },
+  { name: 'Stepped 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/218/3937/Stepped_2_MDF_Skirting_Board_-_145mm_x_18mm_HDF__42303.1585300964.jpg?c=2' },
+  { name: 'Ovolo', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/201/3594/Ovolo_MDF_Skirting_Board_-_145mm_x_18mm_HDF__67314.1585139510.jpg?c=2' },
+  { name: 'Grooved 1 Chamfered', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/182/3149/Grooved_1_Chamfered_MDF_Skirting_Board_-_145mm_x_18mm_HDF__14293.1584092759.jpg?c=2' },
+  { name: 'Ogee 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/200/3564/Ogee_2_MDF_Skirting_Board_-_145mm_x_18mm_HDF__82948.1585136714.jpg?c=2' },
+  { name: 'Grooved 2 Chamfered', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/184/3178/Grooved_2_Chamfered_MDF_Skirting_Board_-_145mm_x_18mm_HDF__57186.1584096398.jpg?c=2' },
+  { name: 'Georgian', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/180/3115/Georgian_MDF_Skirting_Board_-_145mm_x_18mm_HDF__29141.1583843653.jpg?c=2' },
+  { name: 'Grooved 1 Square', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/886/5678/skirting-world-grooved-1-square-mdf-skirting-board__48477.1679327140.jpg?c=2' },
+  { name: 'Lambs Tongue 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/189/3293/Lambs_Tongue_2_MDF_Skirting_Board_-_145mm_x_18mm_HDF__46998.1584630040.jpg?c=2' }
+];
+
+      const beforeSelect = document.querySelector('.before-select');
+      const afterSelect = document.querySelector('.after-select');
+
+      options.forEach(option => {
+        const beforeOption = document.createElement('option');
+        beforeOption.value = option.url;
+        beforeOption.textContent = option.name;
+        beforeSelect.appendChild(beforeOption);
+
+        const afterOption = document.createElement('option');
+        afterOption.value = option.url;
+        afterOption.textContent = option.name;
+        afterSelect.appendChild(afterOption);
+      });
+
+      const beforeDropdown = document.querySelector('.before-dropdown');
+      const afterDropdown = document.querySelector('.after-dropdown');
+      const imageBefore = document.querySelector('.image-before');
+      const imageAfter = document.querySelector('.image-after');
+      const slider = document.querySelector('.slider');
+      const sliderLine = document.querySelector('.slider-line');
+      const sliderButton = document.querySelector('.slider-button');
+
+      function showDropdowns() {
+        beforeDropdown.classList.add('show');
+        afterDropdown.classList.add('show');
+      }
+
+      function updateImages() {
+        const beforeValue = beforeSelect.value;
+        const afterValue = afterSelect.value;
+
+        if (beforeValue) {
+          imageBefore.src = beforeValue;
+        }
+
+        if (afterValue) {
+          imageAfter.src = afterValue;
+        }
+      }
+
+      beforeSelect.addEventListener('change', updateImages);
+      afterSelect.addEventListener('change', updateImages);slider.addEventListener('input', (e) => {
+    const value = e.target.value;
+    document.querySelector('.container').style.setProperty('--position', `${value}%`);
+    sliderLine.style.left = `${value}%`;
+    sliderButton.style.left = `${value}%`;
+  });
+
+  showDropdowns();
+};</script>
+</main>
