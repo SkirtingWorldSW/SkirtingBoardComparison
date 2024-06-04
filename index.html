@@ -1,23 +1,18 @@
 <main>
   <div class="container">
     <div class="image-container">
-      <img class="image-before slider-image" src="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/223/960/067_Torus_1-02_MDF_18mm__75997.1574173961.jpg?c=2" alt="Before Skirting Board" />
+      <img class="image-before slider-image" src="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1920w/products/224/276/068_Torus_2-01_MDF_15mm__21368.1519648733.jpg?c=2" alt="Before Skirting Board" />
       <div class="dropdown before-dropdown">
         <label>
-          <select class="before-select">
-            <option value="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/223/960/067_Torus_1-02_MDF_18mm__75997.1574173961.jpg?c=2" selected>Torus Type 1</option>
-          </select>
+          <select class="before-select"></select>
         </label>
       </div>
       <img class="image-after slider-image" src="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/1126/6932/skirting-world-ogee-1-mdf-skirting-board__34368.1697687726.jpg?c=2" alt="After Skirting Board" />
       <div class="dropdown after-dropdown">
         <label>
-          <select class="after-select">
-            <option value="https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/1126/6932/skirting-world-ogee-1-mdf-skirting-board__34368.1697687726.jpg?c=2" selected>Ogee</option>
-          </select>
+          <select class="after-select"></select>
         </label>
       </div>
-    </div>
     </div>
     <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider" />
     <div class="slider-line" aria-hidden="true"></div>
@@ -34,156 +29,159 @@
   </div>
 
   <style>
-    *,
-    *::after,
-    *::before {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+img {
+  display: block;
+  max-width: 100%;
+}
 
-    main {
-      display: grid;
-      place-items: center;
-    }
+main {
+  display: grid;
+  place-items: center;
+}
 
-    .container {
-      display: grid;
-      place-content: center;
-      position: relative;
-      overflow: hidden;
-      border-radius: 0rem;
-      --position: 50%;
-    }
+.container {
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0rem;
+  --position: 50%;
+}
 
-    .image-container {
-      max-width: 550px;
-      max-height: 550px;
-      aspect-ratio: 1/1;
-      position: relative;
-    }
+.image-container {
+  max-width: 550px;
+  max-height: 550px;
+  aspect-ratio: 1/1;
+  position: relative;
+}
 
-    .slider-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: left;
-    }
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
 
-    .image-before {
-      position: absolute;
-      inset: 0;
-      width: var(--position);
-    }
+.image-before {
+  position: absolute;
+  inset: 0;
+  width: var(--position);
+}
 
-    .slider {
-      position: absolute;
-      inset: 0;
-      cursor: pointer;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-    }
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
 
-    .slider:focus-visible ~ .slider-button {
-      outline: 5px solid black;
-      outline-offset: 3px;
-    }
+.slider:focus-visible ~ .slider-button {
+  outline: 5px solid black;
+  outline-offset: 3px;
+}
 
-    .slider-line {
-      position: absolute;
-      inset: 0;
-      width: 0.2rem;
-      height: 100%;
-      background-color: #fff;
-      left: var(--position);
-      transform: translateX(-50%);
-      pointer-events: none;
-    }
+.slider-line {
+  position: absolute;
+  inset: 0;
+  width: 0.2rem;
+  height: 100%;
+  background-color: #fff;
+  left: var(--position);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
 
-    .slider-button {
-      position: absolute;
-      background-color: #fff;
-      color: black;
-      padding: 0.5rem;
-      border-radius: 100vw;
-      display: grid;
-      place-items: center;
-      top: 50%;
-      left: var(--position);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      box-shadow: 1px 1px 1px hsl(0, 50%, 2%, 0.5);
-    }
+.slider-button {
+  position: absolute;
+  background-color: #fff;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 100vw;
+  display: grid;
+  place-items: center;
+  top: 50%;
+  left: var(--position);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 1px 1px 1px hsl(0, 50%, 2%, 0.5);
+}
 
-    .dropdown {
-      position: absolute;
-      top: 10px;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      border-radius: 20px;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-    }
+/* Updated styles for dropdowns */
+.dropdown {
+  position: absolute;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0.8); /* Black semi-transparent background */
+  color: #fff; /* White text color for better readability */
+  border-radius: 20px; /* Slightly rounded corners */
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold font weight */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: px; /* Padding for a sleek look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
 
-    .dropdown label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.dropdown label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  position: relative;
+}
 
-    .dropdown select {
-      background-color: transparent;
-      border: none;
-      color: #fff;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      appearance: none;
-      outline: none;
-      cursor: pointer;
-      padding: 5px 10px;
-      margin-left: 10px;
-    }
+.dropdown select {
+  margin-left: 10px;
+  padding: 5px 10px; /* Padding for the select element */
+  border-radius: 20px; /* Match border radius */
+  border: none; /* No border */
+  background-color: #000; /* Black background color for the list */
+  color: #fff; /* White text color */
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Remove default arrow in Safari */
+  -moz-appearance: none; /* Remove default arrow in Firefox */
+}
 
-    .dropdown select option {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-    }
+.dropdown select::after {
+  content: "▾"; /* Down-facing arrow */
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: #fff; /* White color for the arrow */
+  font-size: 16px; /* Match font size */
+}
 
-    .before-dropdown {
-      left: 20px;
-    }
+.dropdown.show {
+  opacity: 1;
+}
 
-    .after-dropdown {
-      right: 20px;
-    }
+.before-dropdown {
+  left: 10px;
+}
 
-    .before-dropdown.show {
-      opacity: 1;
-    }
+.after-dropdown {
+  right: 10px;
+}
 
-    .after-dropdown.show {
-      opacity: 1;
-    }
+
   </style>
 
   <script>
     window.onload = function() {
-     const options = [
+       const options = [
   { name: 'Ogee', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/1126/6932/skirting-world-ogee-1-mdf-skirting-board__34368.1697687726.jpg?c=2' },
   { name: 'Torus Type 1', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/223/960/067_Torus_1-02_MDF_18mm__75997.1574173961.jpg?c=2' },
   { name: 'Torus Type 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/224/277/068_Torus_2-02_MDF_18mm__10461.1519648738.jpg?c=2' },
@@ -204,56 +202,53 @@
   { name: 'Grooved 1 Square', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/1280x1280/products/886/5678/skirting-world-grooved-1-square-mdf-skirting-board__48477.1679327140.jpg?c=2' },
   { name: 'Lambs Tongue 2', url: 'https://cdn11.bigcommerce.com/s-8007jfzagw/images/stencil/572x712/products/189/3293/Lambs_Tongue_2_MDF_Skirting_Board_-_145mm_x_18mm_HDF__46998.1584630040.jpg?c=2' }
 ];
+      function populateDropdowns(selectElement, options) {
+        options.forEach(option => {
+          const optionElement = document.createElement('option');
+          optionElement.text = option.name;
+          optionElement.value = option.url;
+          selectElement.add(optionElement);
+        });
+      }
 
       const beforeSelect = document.querySelector('.before-select');
       const afterSelect = document.querySelector('.after-select');
+      const beforeImage = document.querySelector('.image-before');
+      const afterImage = document.querySelector('.image-after');
 
-      options.forEach(option => {
-        const beforeOption = document.createElement('option');
-        beforeOption.value = option.url;
-        beforeOption.textContent = option.name;
-        beforeSelect.appendChild(beforeOption);
+      populateDropdowns(beforeSelect, options);
+      populateDropdowns(afterSelect, options);
 
-        const afterOption = document.createElement('option');
-        afterOption.value = option.url;
-        afterOption.textContent = option.name;
-        afterSelect.appendChild(afterOption);
+      beforeSelect.addEventListener('change', function() {
+        beforeImage.src = beforeSelect.value;
       });
 
+      afterSelect.addEventListener('change', function() {
+        afterImage.src = afterSelect.value;
+      });
+
+      const slider = document.querySelector('.slider');
+      const container = document.querySelector('.container');
       const beforeDropdown = document.querySelector('.before-dropdown');
       const afterDropdown = document.querySelector('.after-dropdown');
-      const imageBefore = document.querySelector('.image-before');
-      const imageAfter = document.querySelector('.image-after');
-      const slider = document.querySelector('.slider');
-      const sliderLine = document.querySelector('.slider-line');
-      const sliderButton = document.querySelector('.slider-button');
 
-      function showDropdowns() {
-        beforeDropdown.classList.add('show');
-        afterDropdown.classList.add('show');
-      }
+      function updatePosition() {
+        container.style.setProperty('--position', `${slider.value}%`);
 
-      function updateImages() {
-        const beforeValue = beforeSelect.value;
-        const afterValue = afterSelect.value;
-
-        if (beforeValue) {
-          imageBefore.src = beforeValue;
-        }
-
-        if (afterValue) {
-          imageAfter.src = afterValue;
+        if (slider.value > 50) {
+          beforeDropdown.classList.add('show');
+          afterDropdown.classList.remove('show');
+        } else if (slider.value < 50) {
+          beforeDropdown.classList.remove('show');
+          afterDropdown.classList.add('show');
+        } else {
+          beforeDropdown.classList.add('show');
+          afterDropdown.classList.add('show');
         }
       }
 
-      beforeSelect.addEventListener('change', updateImages);
-      afterSelect.addEventListener('change', updateImages);slider.addEventListener('input', (e) => {
-    const value = e.target.value;
-    document.querySelector('.container').style.setProperty('--position', `${value}%`);
-    sliderLine.style.left = `${value}%`;
-    sliderButton.style.left = `${value}%`;
-  });
-
-  showDropdowns();
-};</script>
+      slider.addEventListener('input', updatePosition);
+      updatePosition();
+    };
+  </script>
 </main>
